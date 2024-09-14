@@ -11,6 +11,8 @@ body {
     width: 100vw;
     position: relative;
     /*overflow: hidden;*/
+    color: #6d708b;
+
 }
 
 .main-container {
@@ -24,12 +26,8 @@ body {
     z-index: 2;
 }
 
-.bg-right {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 25%;
-    z-index: 1;
+h1 {
+    color: #6d708b;
 }
 
 .bg-left {
@@ -37,7 +35,15 @@ body {
     bottom: 0;
     left: 0;
     width: 25%;
-    z-index: 1; /* Фон на задньому плані */
+    z-index: 1;
+}
+
+.bg-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 25%;
+    z-index: 1;
 }
 
 .pricing-container {
@@ -55,7 +61,9 @@ body {
 }
 
 .toggle > span {
-    margin: 0 10px;
+    margin: 0 15px;
+    color: #bdbec2;
+    font-size: 16px;
 }
 
 .toggle input {
@@ -63,7 +71,7 @@ body {
 }
 
 .toggle label {
-    background-color: #e0e7ff;
+    background: linear-gradient(#a0a5f1, #686ede);
     border-radius: 50px;
     width: 60px;
     height: 30px;
@@ -80,11 +88,16 @@ body {
     border-radius: 50%;
     top: 2px;
     left: 2px;
-    transition: 0.3s;
+    transition: transform 0.4s ease, background-color 0.4s ease;
+}
+
+.toggle input:checked + label {
+    background: linear-gradient(#dfe0fd, #bec9fa);
 }
 
 .toggle input:checked + label:before {
     transform: translateX(30px);
+    transition-duration: 0.4s;
 }
 
 .pricing-plans {
@@ -99,7 +112,11 @@ body {
     padding: 30px;
     width: 350px;
     height: 450px;
-    /*transition: transform 0.3s;*/
+    color: #484a5e;
+}
+
+.plan > h3 {
+    font-size: 22px;
 }
 
 .plan:first-child {
@@ -115,44 +132,63 @@ body {
 .plan:nth-child(2) {
     height: 500px;
     border-radius: 10px;
-    padding: 50px 0;
+    padding: 55px 30px;
+    color: whitesmoke;
+    background: linear-gradient(#a0a5f1, #686ede);
 }
 
+.plan:nth-child(2) > .plan-info > p {
+    border-color: #a5a8e3;
+}
 
-/*.plan:hover {*/
-/*    transform: scale(1.05);*/
-/*}*/
+.plan-info > p {
+    padding: 15px;
+    border-bottom: 1px solid #e0e7ff;
+    /*font-weight: 600;*/
+    font-size: 17px;
+}
 
-.plan h3 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
+.plan-info > p:first-child {
+    border-top: 1px solid #e0e7ff;
 }
 
 .price {
-    font-size: 2rem;
-    color: #6366f1;
-    margin-bottom: 15px;
-}
-
-.plan p {
-    margin-bottom: 10px;
+    font-size: 75px;
+    font-weight: bold;
+    padding: 20px 0;
 }
 
 button {
-    background-color: transparent;
-    color: #4f46e5;
-    border: 1px solid #4f46e5;
-    padding: 10px 20px;
+    /*background-color: transparent;*/;
+    margin-top: 35px;
+    width: 100%;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: linear-gradient(to left, #686ede 10%, 50%, #a0a5f1 90%);
+    color: whitesmoke;
+    padding: 14px 0;
+    border: 1px solid white;
     border-radius: 5px;
     cursor: pointer;
+    transition: all .5s ease;
 }
 
-/*button:hover {*/
-/*    background-color: #4f46e5;*/
-/*}*/
+button:hover {
+    background: linear-gradient(white, white);
+    color: #4f46e5;
+    border: 1px solid #4f46e5;
+}
 
-.highlighted {
-    background-color: mediumpurple;
+.plan:nth-child(2) > button {
+    background: linear-gradient(white, white);
+    color: #4f46e5;
+    border: 1px solid whitesmoke;
+}
+
+.plan:nth-child(2) > button:hover {
+    background: linear-gradient(transparent, transparent);
+    color: whitesmoke;
 }
 
 @media (max-width: 768px) {
