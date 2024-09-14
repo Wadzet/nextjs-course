@@ -4,10 +4,18 @@
     box-sizing: border-box;
 }
 
-body {
-    background-color: #f3f7fc;
+body, html {
+    overflow-x: hidden;
     height: 100vh;
     width: 100vw;
+    max-width: 100%;
+}
+
+
+body {
+    background-color: #f3f7fc;
+    width: 100%;
+    height: 100%;
     position: relative;
     color: #6d708b;
     font-family: "Montserrat", sans-serif;
@@ -211,6 +219,7 @@ button:hover {
     .pricing-plans {
         flex-direction: column;
         align-items: center;
+        min-width: 370px;
     }
 
     .plan {
@@ -220,7 +229,7 @@ button:hover {
     }
 
     .bg-right {
-        top: -50px;
+        top: -100px;
         height: 70%;
         width: 35%;
     }
