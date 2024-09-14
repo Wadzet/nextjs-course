@@ -5,14 +5,15 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
     background-color: #f3f7fc;
     height: 100vh;
     width: 100vw;
     position: relative;
-    /*overflow: hidden;*/
     color: #6d708b;
-
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
 }
 
 .main-container {
@@ -119,6 +120,12 @@ h1 {
     font-size: 22px;
 }
 
+.plan > p span {
+    font-size: 40px;
+    vertical-align: 25%;
+    margin-right: 10px;
+}
+
 .plan:first-child {
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -144,7 +151,6 @@ h1 {
 .plan-info > p {
     padding: 15px;
     border-bottom: 1px solid #e0e7ff;
-    /*font-weight: 600;*/
     font-size: 17px;
 }
 
@@ -159,10 +165,10 @@ h1 {
 }
 
 button {
-    /*background-color: transparent;*/;
     margin-top: 35px;
     width: 100%;
     font-size: 14px;
+    font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
     background: linear-gradient(to left, #686ede 10%, 50%, #a0a5f1 90%);
@@ -192,6 +198,15 @@ button:hover {
 }
 
 @media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+    .main-container {
+        height: max-content;
+
+        padding: 50px 0;
+    }
+
     .pricing-plans {
         flex-direction: column;
         align-items: center;
@@ -200,6 +215,15 @@ button:hover {
     .plan {
         width: 100%;
         margin-bottom: 20px;
+        border-radius: 10px;
+    }
+
+    .bg-right {
+        position: absolute;
+        top: -5%;
+        right: -35%;
+        width: 70%;
+        height: 65%;
     }
 }
 
