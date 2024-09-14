@@ -9,21 +9,161 @@ body {
     background-color: #f3f7fc;
     height: 100vh;
     width: 100vw;
+    position: relative;
+    /*overflow: hidden;*/
 }
 
 .main-container {
     height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.bg-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 25%;
+    z-index: 1;
+}
+
+.bg-left {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 25%;
+    z-index: 1; /* Фон на задньому плані */
 }
 
 .pricing-container {
     max-width: 1500px;
+    max-height: 2000px;
     padding: 20px;
     text-align: center;
 }
 
+.toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
 
+.toggle > span {
+    margin: 0 10px;
+}
+
+.toggle input {
+    display: none;
+}
+
+.toggle label {
+    background-color: #e0e7ff;
+    border-radius: 50px;
+    width: 60px;
+    height: 30px;
+    position: relative;
+    cursor: pointer;
+}
+
+.toggle label:before {
+    content: '';
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    background-color: white;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: 0.3s;
+}
+
+.toggle input:checked + label:before {
+    transform: translateX(30px);
+}
+
+.pricing-plans {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.plan {
+    background-color: white;
+    box-shadow: 0 15px 25px rgba(79, 70, 229, 0.07);
+    padding: 30px;
+    width: 350px;
+    height: 450px;
+    /*transition: transform 0.3s;*/
+}
+
+.plan:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.plan:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.plan:nth-child(2) {
+    height: 500px;
+    border-radius: 10px;
+    padding: 50px 0;
+}
+
+
+/*.plan:hover {*/
+/*    transform: scale(1.05);*/
+/*}*/
+
+.plan h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.price {
+    font-size: 2rem;
+    color: #6366f1;
+    margin-bottom: 15px;
+}
+
+.plan p {
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: transparent;
+    color: #4f46e5;
+    border: 1px solid #4f46e5;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/*button:hover {*/
+/*    background-color: #4f46e5;*/
+/*}*/
+
+.highlighted {
+    background-color: mediumpurple;
+}
+
+@media (max-width: 768px) {
+    .pricing-plans {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .plan {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
 
