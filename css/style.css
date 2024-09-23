@@ -1,3 +1,20 @@
+:root {
+    --bg-color: #f3f7fc;
+    --text-color: #484a5e;
+    --header-text-color: #6d708b;
+    --toggle-text-color: #bdbec2;
+    --white-color: whitesmoke;
+    --plan-bg-color: #ffffff;
+    --plan-hover-color: #686ede;
+    --plan-shadow-color: rgba(79, 70, 229, 0.07);
+    --plan-accent-gradient: linear-gradient(#a0a5f1, #686ede);
+    --plan-hover-gradient: linear-gradient(white, white);
+    --plan-border-color: #e0e7ff;
+    --button-bg-gradient: linear-gradient(to left, #686ede 10%, 50%, #a0a5f1 90%);
+    --toggle-on-gradient: linear-gradient(#dfe0fd, #bec9fa);
+    --toggle-off-gradient: linear-gradient(#a0a5f1, #686ede);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -11,21 +28,26 @@ body, html {
     max-width: 100%;
 }
 
-
 body {
-    background-color: #f3f7fc;
+    background-color: var(--bg-color);
     width: 100%;
     height: 100%;
     position: relative;
-    color: #6d708b;
+    color: var(--text-color);
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
+    padding: 65px 0;
 }
 
-.main-container {
-    height: 100%;
+header {
+    text-align: center;
+    padding-top: 10px;
+    color: var(--header-text-color);
+}
+
+main {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -33,10 +55,6 @@ body {
     align-items: center;
     position: relative;
     z-index: 2;
-}
-
-h1 {
-    color: #6d708b;
 }
 
 .bg-left {
@@ -71,7 +89,7 @@ h1 {
 
 .toggle > span {
     margin: 0 15px;
-    color: #bdbec2;
+    color: var(--toggle-text-color);
     font-size: 16px;
 }
 
@@ -80,7 +98,7 @@ h1 {
 }
 
 .toggle label {
-    background: linear-gradient(#a0a5f1, #686ede);
+    background: var(--toggle-off-gradient);
     border-radius: 50px;
     width: 60px;
     height: 30px;
@@ -93,7 +111,7 @@ h1 {
     position: absolute;
     width: 26px;
     height: 26px;
-    background-color: white;
+    background-color: var(--white-color);
     border-radius: 50%;
     top: 2px;
     left: 2px;
@@ -101,7 +119,7 @@ h1 {
 }
 
 .toggle input:checked + label {
-    background: linear-gradient(#dfe0fd, #bec9fa);
+    background: var(--toggle-on-gradient);
 }
 
 .toggle input:checked + label:before {
@@ -116,12 +134,12 @@ h1 {
 }
 
 .plan {
-    background-color: white;
-    box-shadow: 15px 20px 30px rgba(79, 70, 229, 0.07);
+    background-color: var(--plan-bg-color);
+    box-shadow: 15px 20px 30px var(--plan-shadow-color);
     padding: 30px;
     width: 350px;
     height: 450px;
-    color: #484a5e;
+    color: var(--text-color);
 }
 
 .plan > h3 {
@@ -148,22 +166,22 @@ h1 {
     height: 500px;
     border-radius: 10px;
     padding: 55px 30px;
-    color: whitesmoke;
-    background: linear-gradient(#a0a5f1, #686ede);
+    color: var(--white-color);
+    background: var(--plan-accent-gradient);
 }
 
 .plan:nth-child(2) > .plan-info > p {
-    border-color: #a5a8e3;
+    border-color: var(--toggle-text-color);
 }
 
 .plan-info > p {
     padding: 15px;
-    border-bottom: 1px solid #e0e7ff;
+    border-bottom: 1px solid var(--plan-border-color);
     font-size: 15px;
 }
 
 .plan-info > p:first-child {
-    border-top: 1px solid #e0e7ff;
+    border-top: 1px solid var(--plan-border-color);
 }
 
 .price {
@@ -172,7 +190,6 @@ h1 {
     padding: 20px 0;
 }
 
-
 button {
     margin-top: 35px;
     width: 100%;
@@ -180,33 +197,73 @@ button {
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
-    background: linear-gradient(to left, #686ede 10%, 50%, #a0a5f1 90%);
-    color: whitesmoke;
+    background: var(--button-bg-gradient);
+    color: var(--white-color);
     padding: 14px 0;
-    border: 1px solid white;
+    border: 1px solid var(--white-color);
     border-radius: 5px;
     cursor: pointer;
     transition: all .5s ease;
 }
 
 button:hover {
-    background: linear-gradient(white, white);
-    color: #686ede;
-    border: 1px solid #a0a5f1;
+    background: var(--plan-hover-gradient);
+    color: var(--plan-hover-color);
+    border: 1px solid var(--plan-hover-color);
 }
 
 .plan:nth-child(2) > button {
-    background: linear-gradient(white, white);
-    color: #686ede;
-    border: 1px solid whitesmoke;
+    background: var(--plan-hover-gradient);
+    color: var(--plan-hover-color);
+    border: 1px solid var(--white-color);
 }
 
 .plan:nth-child(2) > button:hover {
-    background: linear-gradient(transparent, transparent);
-    color: whitesmoke;
+    background: transparent;
+    color: var(--white-color);
 }
 
-@media (max-width: 768px) {
+@media (min-width: 1600px) {
+
+    .price {
+        font-size: 85px;
+    }
+
+    button {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 1050px) {
+    body {
+        overflow-x: hidden;
+        max-width: 100vw;
+    }
+    .main-container {
+        height: max-content;
+        padding: 50px 0;
+    }
+
+    .pricing-plans {
+        flex-direction: column;
+        align-items: center;
+        min-width: 670px;
+    }
+
+    .plan {
+        width: 100%;
+        margin-bottom: 20px;
+        border-radius: 10px;
+    }
+
+    .bg-right {
+        top: -100px;
+        height: 70%;
+        width: 35%;
+    }
+}
+
+@media (max-width: 670px) {
     body {
         overflow-x: hidden;
         max-width: 100vw;
@@ -235,3 +292,18 @@ button:hover {
     }
 }
 
+@media (max-width: 480px) {
+    .plan {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+    }
+
+    .pricing-container {
+        padding: 10px;
+    }
+
+    .price {
+        font-size: 50px;
+    }
+}

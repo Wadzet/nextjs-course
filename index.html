@@ -2,31 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pricing component with toggle</title>
     <link rel="shortcut icon" type="image/jpg" href="img/favicon-32x32.png"/>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <header>
+        <h1>Our Pricing</h1>
+    </header>
     <img src="img/bg-right.svg" class="bg-right" alt="Right background element">
     <img src="img/bg-left.svg" class="bg-left" alt="Left background element">
-    <div class="main-container">
-        <h1>Our Pricing</h1>
-        <div class="toggle">
-            <span>Annually</span>
-            <input type="checkbox" id="toggleSwitch">
-            <label for="toggleSwitch"></label>
-            <span>Monthly</span>
-        </div>
-        <div class="pricing-container">
+    <main>
+        <section class="pricing-toggle">
+            <div class="toggle">
+                <span>Annually</span>
+                <input type="checkbox" id="toggleSwitch">
+                <label for="toggleSwitch"></label>
+                <span>Monthly</span>
+            </div>
+        </section>
+        <section class="pricing-container">
             <div class="pricing-plans">
-                <div class="plan">
+                <article class="plan">
                     <h3>Basic</h3>
                     <p class="price">
                         <span>$</span> 19.99
@@ -37,8 +40,8 @@
                         <p>Send up to 3 GB</p>
                     </div>
                     <button>Learn More</button>
-                </div>
-                <div class="plan">
+                </article>
+                <article class="plan">
                     <h3>Professional</h3>
                     <p class="price">
                         <span>$</span> 24.99
@@ -49,8 +52,8 @@
                         <p>Send up to 10 GB</p>
                     </div>
                     <button>Learn More</button>
-                </div>
-                <div class="plan">
+                </article>
+                <article class="plan">
                     <h3>Master</h3>
                     <p class="price">
                         <span>$</span>39.99
@@ -61,10 +64,11 @@
                         <p>Send up to 20 GB</p>
                     </div>
                     <button>Learn More</button>
-                </div>
+                </article>
             </div>
-        </div>
-    </div>
-    <script src="script.js"></script>
+        </section>
+    </main>
+
+    <script src="script.js" type="module"></script>
 </body>
 </html>
